@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+    <constant name="struts.devMode" value="true" />
+
+    <constant name="struts.custom.i18n.resources" value="mesTextes"/>
+
+    <package name="/" extends="struts-default">
+        <default-action-ref name="index"/>
+
+        <action name="index">
+            <result>/WEB-INF/vues/index.jsp</result>
+        </action>
+
+        <action name="connexion" class="actions.Connexion">
+            <result name="success">/WEB-INF/vues/menu.jsp</result>
+            <result name="input">/WEB-INF/vues/index.jsp</result>
+            <result name="error">/WEB-INF/vues/index.jsp</result>
+        </action>
+
+        <action name="inscription" class="actions.Inscription">
+            <result name="success">/WEB-INF/vues/inscriptionValidee.jsp</result>
+            <result name="input">/WEB-INF/vues/index.jsp</result>
+            <result name="cree">/WEB-INF/vues/index.jsp</result>
+        </action>
+
+        <action name="deconnexion" class="actions.Deconnexion">
+            <result name="success">/WEB-INF/vues/index.jsp</result>
+            <result name="error">/WEB-INF/vues/menu.jsp</result>
+        </action>
+
+        <action name="retourMenu" class="actions.RetourMenu">
+            <result name="success">/WEB-INF/vues/menu.jsp</result>
+        </action>
+
+        <action name="goToCreerPartie" class="actions.InitialisationPageCreation">
+            <result>/WEB-INF/vues/creationPartie.jsp</result>
+        </action>
+
+        <action name="goToInitBateaux" class="actions.InitialisationBateaux">
+            <result>/WEB-INF/vues/initBateaux.jsp</result>
+        </action>
+
+        <action name="CreerPartie" class="actions.CreationPartie">
+            <result name="success">/WEB-INF/vues/salon.jsp</result>
+            <result name="error">/WEB-INF/vues/menu.jsp</result>
+            <result name="partieLancee">/WEB-INF/vues/initBateaux.jsp</result>
+        </action>
+
+        <action name="goToListeParties" class="actions.GetListesParties">
+            <result name="success">/WEB-INF/vues/listeParties.jsp</result>
+            <result name="error">/WEB-INF/vues/index.jsp</result>
+        </action>
+
+        <action name="quitterSalon" class="actions.QuitterSalon">
+            <result>/WEB-INF/vues/menu.jsp</result>
+        </action>
+
+        <action name="rejoindrePartie" class="actions.RejoindrePartie">
+            <result name="success">/WEB-INF/vues/salon.jsp</result>
+            <result name="error">/WEB-INF/vues/listeParties.jsp</result>
+        </action>
+
+        <action name="poserBateau" class="actions.PoserBateau">
+            <result name="success">/WEB-INF/vues/initBateaux.jsp</result>
+            <result name="error">/WEB-INF/vues/menu.jsp</result>
+            <result name="input">/WEB-INF/vues/menu.jsp</result>
+            <result name="configOK">/WEB-INF/vues/tourJoueurE1.jsp</result>
+        </action>
+
+        <action name="lancerPartie" class="actions.InitialisationBateaux" >
+            <result name="success">/WEB-INF/vues/initBateaux.jsp</result>
+        </action>
+    </package>
+</struts>

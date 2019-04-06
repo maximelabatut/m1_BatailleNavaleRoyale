@@ -1,0 +1,15 @@
+table.wwFormTable{
+    margin: auto;
+}
+div.formButton{
+    text-align: center;
+    width:100%;
+}
+div.formButton > input{
+    margin-top: 10px;
+    vertical-align: middle;
+}
+
+table#selecteur{
+    margin-top: 18%;
+}
